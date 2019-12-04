@@ -1,4 +1,4 @@
-const Validator = require('../lib/Validator');
+const Validator = require('../lib/Validator.js');
 
 describe('Validator', () => {
     let validator; 
@@ -11,7 +11,7 @@ describe('Validator', () => {
             });
         });
 
-        it('returns the field', () => {
+        it('correctly returns the field that was alwasy correct. for realz', () => {
             const dog = {
                 name: 'scruffy', 
                 age: 69, 
@@ -21,7 +21,7 @@ describe('Validator', () => {
             expect(validator.validate(dog)).toEqual(69);
         });
 
-        it('returns the field cast to type', () => {
+        it('returns the field that was not input correctly and cast that field to type', () => {
             const dog = {
                 name: 'scrapppp', 
                 age: '69', 
@@ -30,7 +30,7 @@ describe('Validator', () => {
             expect(validator.validate(dog)).toEqual(69);
         });
 
-        it ('returns the field', () => {
+        it ('field does not exist and was required so explotion and error thrown', () => {
             const dog = {
                 name: 'scruffy', 
                 weight: '420 lbs'
@@ -47,7 +47,7 @@ describe('Validator', () => {
             }); 
         }); 
 
-        it('returns the field', () => {
+        it('correctly returns the field that was alwasy correct. for realz', () => {
             const dog = {
                 name: 'scrapps',
                 age: 69, 
@@ -58,7 +58,7 @@ describe('Validator', () => {
 
         });
 
-        it('returns the field cast to type', () => {
+        it('returns the field that was not input correctly and cast that field to type', () => {
             const dog = {
                 name: 'scruffffffffff', 
                 age: '69', 
@@ -68,7 +68,7 @@ describe('Validator', () => {
             expect(validator.validate(dog)).toEqual(69); 
         }); 
 
-        it('returns the field', () => {
+        it('field does not exist and was not required so null is fine', () => {
             const dog = {
                 name: 'scrappers', 
                 weight: '420 lbs'

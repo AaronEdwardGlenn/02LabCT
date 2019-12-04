@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Schema throws on a bad schema 1`] = `"this schema is not even close to valid. Sort your life out >> Error: name needs to be here. What are you doing. Serously.,Error: Cannot cast >>scruffy<< to Number"`;
